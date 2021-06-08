@@ -18,24 +18,24 @@ public class Solution24 {
 
             String output = generateOutput(result);
 
-            System.out.println(output);
+            System.out.println(word1 + " and " + word2 + output);
         }
 
 
         public static void readUserInput() {
             System.out.println("Enter two strings and I'll tell you if they are anagrams:");
-            System.out.println("Enter word 1: ");
+            System.out.println("Enter the first string: ");
             word1 = in.next();
 
-            System.out.println("Enter word 2: ");
+            System.out.println("Enter the second string: ");
             word2 = in.next();
         }
         public static String generateOutput(boolean isAnagram) {
             String output;
             if(isAnagram) {
-                return "is anagram";
+                return " are anagrams";
             } else {
-                return "is not anagram";
+                return " are not anagrams";
             }
         }
 
