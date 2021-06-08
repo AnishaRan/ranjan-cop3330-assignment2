@@ -1,6 +1,10 @@
 package org.example.ex26.base;
 
 import java.util.Scanner;
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Anisha Ranjan
+ */
 
 public class Solution26 {
     private static final Scanner in = new Scanner(System.in);
@@ -20,13 +24,9 @@ public class Solution26 {
 
         System.out.print(output);
 
-        // DELETE LATER // WORK ON FORMULA
-        double i = (aprPercent / 100.0) / 365;
-        double n = -(1.0/30) ;
 
-        int intN = (int)n;
 
-        System.out.println("\nn is " + n);
+
 
     }
 
