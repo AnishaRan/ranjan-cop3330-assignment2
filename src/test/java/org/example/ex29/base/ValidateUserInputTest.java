@@ -7,10 +7,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class ValidateUserInputTest {
 
     @Test
-    void validateUserInput() {
+    void validateUserInput_false1() {
         ValidateUserInput validateUserInput = new ValidateUserInput();
-        boolean expected = true;
-        boolean actual = validateUserInput.validateUserInput();
-        assertEquals(expected, actual);
+        boolean actual = validateUserInput.isValid("abc");
+        assertFalse(actual);
+    }
+
+    @Test
+    void validateUserInput_true1() {
+        ValidateUserInput validateUserInput = new ValidateUserInput();
+        boolean actual = validateUserInput.isValid("123");
+        assertTrue(actual);
+    }
+
+    @Test
+    void validateUserInput_zero_false() {
+        ValidateUserInput validateUserInput = new ValidateUserInput();
+        boolean actual = validateUserInput.isValid("0");
+        assertFalse(actual);
     }
 }

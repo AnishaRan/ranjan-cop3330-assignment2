@@ -5,19 +5,7 @@ package org.example.ex30.base;
  */
 public class Solution30 {
     public static void main(String[] args) {
-        // generate output function
-            // create 12 x 12 multiplication table
-            // don't use the tab character
-
-        // test cases?
-            // only 1 possible test case
-
-
+        MultiplicationTable twelveTable = new MultiplicationTable();
+        int result = twelveTable.generateMultiplicationTable();
     }
-
-    public static void generateOutput() {
-
-    }
-
-
 }

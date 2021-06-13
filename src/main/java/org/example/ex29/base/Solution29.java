@@ -8,24 +8,31 @@ import java.util.Scanner;
 
 public class Solution29 {
     private static final Scanner in = new Scanner(System.in);
-    private static String r;
 
     public static void main(String[] args)
     {
-        // get user input
-        // determine if user input is valid/invalid
-            // if invalid, prompt for another input until valid input is received
-            // Class: check if it's valid input
-                // return type can be boolean
-                // true -> valid input
-                // false -> invalid input
-            //
-        // calculate result (years)
-        // display output
-        
+        int result = ValidateUserInput();
+        generateOutput(result);
     }
 
-    /*public static void ValidateUserInput() {
+    public static int ValidateUserInput() {
+        ValidateUserInput validateUserInput = new ValidateUserInput();
+        while(true)
+        {
+            System.out.print("What is the rate of return? ");
+            String input = in.next();
+            boolean result = validateUserInput.isValid(input);
+            if(result)
+            {
+                return Integer.parseInt(input);
+            } else {
+                System.out.println("Sorry. That's not a valid input.");
+            }
+        }
+    }
 
-    }*/
+    public static void generateOutput(int r) {
+        int years = 72 / r;
+        System.out.printf("It will take %d years to double your initial investment.", years);
+    }
 }
