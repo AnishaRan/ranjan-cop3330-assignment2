@@ -24,8 +24,6 @@ public class Solution38 {
             System.out.print(evenArray[i] + " ");
         }
 
-
-        // display even numbers
     }
 
     private static List<Integer> getUserInput() {

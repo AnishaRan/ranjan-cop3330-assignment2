@@ -12,7 +12,6 @@ public class Predictions {
         double doubleRandNum = Math.floor(Math.random()*(max-min+1)+min);
         int randNum = (int)doubleRandNum;
         String[] prediction = {"Yes", "No", "Maybe", "Ask again later."};
-        //System.out.println(prediction[randNum]);
         return randNum;
     }
 }

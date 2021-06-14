@@ -13,20 +13,6 @@ public class Solution32 {
     public static void main(String[] args) {
 
         loopUserInput();
-        // Get user input for guess
-            // count the amount of guesses that the user entered
-            // display if user picked a # too high or too low
-        // Once right answer is entered
-            // display # of guesses
-            // Ask if user wants to play again
-            // while loop breaks when user enters 'no'
-            // while loop continues if user enters 'yes'
-
-        // Class: GuessTheNumberGame
-            // Randomly generate number according to difficulty
-                // Take in difficulty int, return random # accordingly
-            // Keep track of # of guesses
-            // do you wish to play again? loop
 
     }
     public static void loopUserInput() {

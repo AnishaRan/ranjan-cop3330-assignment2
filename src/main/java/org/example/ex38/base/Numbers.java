@@ -12,13 +12,7 @@ import static org.example.ex38.base.Solution38.listToArray;
 public class Numbers {
     public Integer[] filterEvenNumbers(Integer[] intArray) {
         List<Integer> evenList = new ArrayList<>(0);
-        /*while(true) {
-            if(in.hasNextLine()) {
-                break;
-            } else {
-                intList.add(in.nextInt());
-            }
-        }*/
+
         for(int i = 0; i < intArray.length; i++) {
             if(intArray[i] % 2 == 0) {
                 evenList.add(intArray[i]);

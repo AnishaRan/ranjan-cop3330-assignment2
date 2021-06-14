@@ -18,7 +18,6 @@ public class Solution28 {
         int sum = calculateResults.calculateResult(num);
         generateOutput(sum);
 
-        // display output
     }
 
     public static void readUserInput() {

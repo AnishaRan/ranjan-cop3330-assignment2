@@ -13,7 +13,6 @@ public class Solution24 {
     private static String word2;
 
         public static void main(String[] args) {
-            // read 2 strings
             readUserInput();
 
 

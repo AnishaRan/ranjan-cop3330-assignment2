@@ -34,11 +34,7 @@ public class Solution34 {
 
         System.out.println("Updated List:");
 
-        //System.out.println(updatedEmployee);
         updatedEmployee.forEach(System.out::println);
-
-
-        //String updatedEmployeeList = employeeArray.removingEmployeeIndex(employees, remove_employee_idx);
 
     }
 }
