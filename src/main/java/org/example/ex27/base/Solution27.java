@@ -15,14 +15,9 @@ public class Solution27 {
     private static String employeeID;
 
     public static void main(String[] args) {
-        int result = 12345;
-        System.out.println("Result: " + result % 10);
-        System.out.println("Result2: " + result % 10);
-        readUserInput();
-
         ValidateInput validateInput = new ValidateInput();
+        readUserInput();
         String output = validateInput.validateInput(firstName, lastName, zipCode, employeeID);
-        System.out.println(output);
         generateOutput(output);
     }
 
@@ -37,24 +32,29 @@ public class Solution27 {
         employeeID = in.nextLine();
     }
 
-    public static void generateOutput(String output) {
-        int intOutput = Integer.parseInt(output);
-
-        int employeeIDResult = intOutput % 10; // last #
-        int zipCodeResult = employeeIDResult % 10; // 4th #
-        int lNameResult = zipCodeResult % 10; // third #
-        int fNameResult = lNameResult % 10; // will be the second #
-
-        if(!interpretResults(fNameResult)) {
-            System.out.print(" is not a ");
+    public static void generateOutput(String results) {
+        if(results.contains("FNempty")) {
+            System.out.println("The first name must be at least 2 characters long.");
+            System.out.println("The first name must be filled in.");
+        } else if(results.contains("FNshort")) {
+            System.out.println("The first name must be at least 2 characters long.");
         }
+        if(results.contains("FNcorrectLNcorrectZCEmp")) {
+            System.out.println("There were no errors found.");
+        }
+        if(results.contains("LNempty")) {
+            System.out.println("The last name must be at least 2 characters long.");
+            System.out.println("The last name must be filled in.");
+        } else if(results.contains("LNshort")) {
+            System.out.println("The last name must be at least 2 characters long.");
+        }
+        if(!results.contains("Emp")) {
+            System.out.println("The employee ID must be in the format of AA-1234.");
+        }
+        if(!results.contains("ZC")) {
+            System.out.println("The zipcode must be a 5 digit number.");
+        }
+
     }
 
-    public static boolean interpretResults(int result) {
-        if(result == 2) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

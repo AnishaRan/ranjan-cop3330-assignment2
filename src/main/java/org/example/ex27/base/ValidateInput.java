@@ -12,108 +12,66 @@ public class ValidateInput {
         boolean zipCodeResult = validateZipCode(zipCode);
         boolean employeeIDResult = validateEmployeeID(employeeID);
 
-        // 1 - false
-        // 2 - true
-        // return abcdef => 6 digits no matter what.
-        // a = intFirstNameResult => 1 - false: 9 - too short , 8 - "" nothing entered || 2 - true
-        // b = intLastNameResult
-        // c = intZipCodeResult
-        // d = intEmployeeIDResult
+        String strZCResult = "";
+        String strEmpResult = "";
 
-        String intFirstNameResult;
-        String intLastNameResult;
-        String intZipCodeResult;
-        String intEmployeeIDResult;
-        /*if(firstNameResult) {
-            intFirstNameResult = "2";
-        } else {
-            intFirstNameResult = "1";
-        }
-        if(lastNameResult) {
-            intLastNameResult = "2";
-        } else {
-            intLastNameResult = "1";
-        }*/
         if(zipCodeResult) {
-            intZipCodeResult = "2";
-        } else {
-            intZipCodeResult = "1";
+            strZCResult = "ZC";
         }
         if(employeeIDResult) {
-            intEmployeeIDResult = "2";
-        } else {
-            intEmployeeIDResult = "1";
+            strEmpResult = "Emp";
         }
 
-        return firstNameResult + lastNameResult + intZipCodeResult + intEmployeeIDResult;
+        return "FN" + firstNameResult + "LN" + lastNameResult + strZCResult + strEmpResult;
+
     }
 
     public String validateName(String name) {
-        // must be filled in
-        // at least 2 char length
-        int problem1_counter = 0;
-        int problem2_counter = 0;
-        String problem1 = "";
-        String problem2 = "";
-        int nameLength = name.length();
-        if(!name.equals("") && nameLength >= 2) {
-            return "22";
-        }
         if(name.equals("")) {
-            problem1_counter++;
+            return "empty";
+        } else if(name.length() < 2) {
+            return "short";
+        } else {
+            return  "correct";
         }
-        if(nameLength < 2) {
-            problem2_counter++;
-        }
-
-        if(problem1_counter != 0) {
-            problem1 = "8";
-        }
-        if(problem2_counter != 0) {
-            problem2 = "9";
-        }
-        return problem1 + problem2;
     }
 
     public boolean validateZipCode(String zipCode) {
-        int length = zipCode.length();
-        char char_position;
-        int digit_count = 0;
-        for(int i = 0; i < length; i++)
-        {
-            char_position = zipCode.charAt(i);
-
-            if(Character.isDigit(char_position)) {
-                digit_count++;
+        int i = 0;
+        for(i = 0; i < zipCode.length(); i++) {
+            if(!Character.isDigit(zipCode.charAt(i))) {
+                break;
             }
-
         }
-        return digit_count == length;
+        if(i == 5) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean validateEmployeeID(String employeeID) {
-        // format AA-1234. So, two letters, a hyphen, and four numbers.
-        int employeeIDLength = employeeID.length();
-        char char_position;
-        int letter_count = 0;
-        int digit_count = 0;
+        int num_count = 0;
         int hyphen_count = 0;
-        char hyphen = '-';
-        for(int i = 0; i < employeeIDLength; i++)
-        {
-            char_position = employeeID.charAt(i);
-
-
-            if(Character.isLetter(char_position)) {
+        int letter_count = 0;
+        int total_char_count = 0;
+        for(int i = 0; i < employeeID.length(); i++) {
+            if(Character.isDigit(employeeID.charAt(i))) {
+                num_count++;
+            } else if(Character.isLetter(employeeID.charAt(i))) {
                 letter_count++;
-            } else if(Character.isDigit(char_position)) {
-                digit_count++;
-            } else if(employeeID.charAt(i) == hyphen){
+            } else if(employeeID.charAt(i) == '-') {
                 hyphen_count++;
+            } else {
+                break;
             }
-
+            total_char_count++;
         }
-        return letter_count == 2 && hyphen_count == 1 && digit_count == 4;
+        if(num_count == 4 && total_char_count == 7 && hyphen_count == 1 && letter_count == 2) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
