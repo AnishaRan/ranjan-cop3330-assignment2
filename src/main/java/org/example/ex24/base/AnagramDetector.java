@@ -1,6 +1,10 @@
 package org.example.ex24.base;
 
 import java.util.Arrays;
+/*
+ *  UCF COP3330 Summer 2021 Assignment 2 Solution
+ *  Copyright 2021 Anisha Ranjan
+ */
 
 public class AnagramDetector {
     public boolean isAnagram(String word1, String word2) {
@@ -16,11 +20,7 @@ public class AnagramDetector {
             Arrays.sort(word1CharArray);
             Arrays.sort(word2CharArray);
 
-            if(Arrays.equals(word1CharArray, word2CharArray)) {
-                return true;
-            } else {
-                return false;
-            }
+            return Arrays.equals(word1CharArray, word2CharArray);
 
         }
 

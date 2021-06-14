@@ -4,7 +4,7 @@ package org.example.ex32.base;
  *  Copyright 2021 Anisha Ranjan
  */
 
-import java.util.Locale;
+
 import java.util.Scanner;
 
 public class Solution32 {
